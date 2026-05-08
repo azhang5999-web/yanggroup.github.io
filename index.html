@@ -428,36 +428,24 @@
 
     .research-visual {
       height: 150px;
-      background:
-        radial-gradient(circle at 22% 35%, rgba(66, 194, 255, 0.75), transparent 24%),
-        radial-gradient(circle at 78% 55%, rgba(243, 179, 61, 0.65), transparent 28%),
-        linear-gradient(135deg, #08203e, #1f6fba);
       position: relative;
       overflow: hidden;
+      background: #e9eef6;
     }
 
-    .research-visual::before {
-      content: "";
-      position: absolute;
-      inset: 24px;
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      border-radius: 999px;
-      transform: rotate(-12deg);
+    .research-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
 
+    .research-visual::before,
     .research-visual::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 70px;
-      height: 70px;
-      transform: translate(-50%, -50%);
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.16);
-      backdrop-filter: blur(6px);
+      display: none;
     }
-
+    
     .research-content {
       padding: 24px;
       display: flex;
@@ -948,7 +936,8 @@
 
         <div class="research-grid">
           <article class="research-card">
-            <div class="research-visual" aria-hidden="true"></div>
+            <div class="research-visual">
+              <img src="researchdirectionpictures/c1chemistry.jpg" alt="Heterogeneous Synthesis of Fine Chemicals and Polymers from C1 Sources">
             <div class="research-content">
               <h3>Heterogeneous Synthesis of Fine Chemicals and Polymers from C1 Sources</h3>
               <p>Developing catalysts and electrochemical systems for coupling carbon and nitrogen feedstocks into value-added products such as urea and amides.</p>
@@ -961,7 +950,8 @@
           </article>
 
           <article class="research-card">
-            <div class="research-visual" aria-hidden="true"></div>
+            <div class="research-visual">
+              <img src="researchdirectionpictures/plastic.jpg" alt="Functional Upcycling of Inert Plastics through Coupled Processes">
             <div class="research-content">
               <h3>Functional Upcycling of Inert Plastics through Coupled Processes</h3>
               <p>Using Joule heating, pulsed heating, and spatial temperature gradients to enable rapid, selective, and energy-efficient chemical transformations.</p>
@@ -974,7 +964,8 @@
           </article>
 
           <article class="research-card">
-            <div class="research-visual" aria-hidden="true"></div>
+            <div class="research-visual">
+              <img src="researchdirectionpictures/ai.jpg" alt="AI-Driven Catalyst Design and Testing">
             <div class="research-content">
               <h3>AI-Driven Catalyst Design and Testing</h3>
               <p>Combining spectroscopy, microscopy, electrochemical methods, and kinetic analysis to reveal active phases and reaction pathways.</p>
