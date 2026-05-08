@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Yang Research Group | Sustainable catalysis, electrified chemical synthesis, materials chemistry, and energy conversion." />
+  <meta name="keywords" content="Yang Research Group, catalysis, electrochemistry, materials chemistry, energy, sustainability" />
+  <meta name="author" content="Yang Research Group" />
+  <title>Yang Research Group</title>
+
+  <!--
+    GitHub Pages quick use:
+    1. Save this file as index.html
+    2. Upload it to the root of your GitHub Pages repository
+    3. Replace all placeholder texts, emails, photos, and publication entries
+    4. In GitHub: Settings → Pages → Build and deployment → Source: Deploy from a branch → main / root
+  -->
+
+  <style>
+    :root {
+      --navy: #09203f;
+      --blue: #1f6fba;
+      --cyan: #42c2ff;
+      --gold: #f3b33d;
+      --text: #172033;
+      --muted: #657083;
+      --light: #f6f8fb;
+      --white: #ffffff;
+      --line: #e4e9f1;
+      --shadow: 0 18px 45px rgba(9, 32, 63, 0.13);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 92px 0;
+    }
+
+    .section.light {
+      background: var(--light);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blue);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      border-radius: 999px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      color: var(--navy);
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 7vw, 5.7rem);
+      letter-spacing: -0.06em;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: -0.04em;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .lead {
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      color: #dcecff;
+      max-width: 760px;
+      margin-top: 24px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(9, 32, 63, 0.16);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--gold), #ffd979);
+      color: #2a1b00;
+    }
+
+    .topbar {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: 76px;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(228, 233, 241, 0.7);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background:
+        radial-gradient(circle at 35% 35%, var(--cyan), transparent 34%),
+        linear-gradient(135deg, var(--navy), var(--blue));
+      box-shadow: 0 10px 25px rgba(31, 111, 186, 0.25);
+      position: relative;
+    }
+
+    .brand-mark::after {
+      content: "Y";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 0.96rem;
+      font-weight: 750;
+      color: #364156;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background: var(--blue);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.2s ease;
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--white);
+      color: var(--navy);
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: 92vh;
+      padding-top: 76px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        linear-gradient(115deg, rgba(9, 32, 63, 0.97) 0%, rgba(9, 32, 63, 0.87) 48%, rgba(31, 111, 186, 0.65) 100%),
+        url("https://images.unsplash.com/photo-1581093458791-9d42cc51ee68?auto=format&fit=crop&w=1800&q=80") center/cover;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(2px);
+      opacity: 0.5;
+    }
+
+    .hero::before {
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(66, 194, 255, 0.35), transparent 65%);
+      right: -120px;
+      top: 130px;
+    }
+
+    .hero::after {
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(243, 179, 61, 0.32), transparent 65%);
+      left: -120px;
+      bottom: 20px;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      gap: 56px;
+      align-items: center;
+      padding: 80px 0;
+    }
+
+    .hero h1 {
+      color: var(--white);
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #eaf6ff;
+      font-weight: 800;
+      backdrop-filter: blur(10px);
+      margin-bottom: 24px;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 30px;
+      padding: 30px;
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      color: var(--white);
+      margin-bottom: 18px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--white);
+      font-size: 1.9rem;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: #dcecff;
+      font-size: 0.88rem;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 52px;
+      align-items: start;
+    }
+
+    .mission-box {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 100px;
+    }
+
+    .mission-box .quote {
+      color: var(--navy);
+      font-size: 1.25rem;
+      font-weight: 850;
+      line-height: 1.45;
+      margin-bottom: 18px;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .mini-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .mini-icon {
+      flex: 0 0 34px;
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: #eaf5ff;
+      color: var(--blue);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 38px;
+    }
+
+    .research-card,
+    .member-card,
+    .publication-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 28px rgba(9, 32, 63, 0.07);
+    }
+
+    .research-card {
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .research-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .research-visual {
+      height: 150px;
+      background:
+        radial-gradient(circle at 22% 35%, rgba(66, 194, 255, 0.75), transparent 24%),
+        radial-gradient(circle at 78% 55%, rgba(243, 179, 61, 0.65), transparent 28%),
+        linear-gradient(135deg, #08203e, #1f6fba);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .research-visual::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      transform: rotate(-12deg);
+    }
+
+    .research-visual::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 70px;
+      height: 70px;
+      transform: translate(-50%, -50%);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(6px);
+    }
+
+    .research-content {
+      padding: 24px;
+    }
+
+    .research-content p {
+      margin-bottom: 18px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #eef6ff;
+      color: #245f9f;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .team-sections {
+      display: grid;
+      gap: 42px;
+      margin-top: 42px;
+    }
+
+    .team-section-block {
+      display: grid;
+      gap: 22px;
+    }
+
+    .team-section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 4px;
+    }
+
+    .team-section-title h3 {
+      margin-bottom: 0;
+      font-size: 1.75rem;
+    }
+
+    .team-section-title::before {
+      content: "";
+      width: 42px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+    }
+
+    .pi-card {
+      display: grid;
+      grid-template-columns: 330px 1fr;
+      gap: 34px;
+      align-items: stretch;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .pi-photo {
+      min-height: 430px;
+      background:
+        linear-gradient(135deg, rgba(9, 32, 63, 0.1), rgba(31, 111, 186, 0.08)),
+        #e9eef6;
+      display: grid;
+      place-items: center;
+      color: #91a1b8;
+      font-size: 4rem;
+      font-weight: 900;
+    }
+
+    .pi-photo-img {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      background: #e9eef6;
+    }
+
+    .pi-content {
+      padding: 34px 34px 34px 0;
+    }
+
+    .member-role {
+      color: var(--blue);
+      font-weight: 850;
+      font-size: 0.92rem;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .pi-content h3 {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+
+    .pi-content p {
+      margin-bottom: 14px;
+    }
+
+    .pi-info-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .pi-info-list div {
+      color: var(--muted);
+    }
+
+    .pi-info-list strong {
+      color: var(--navy);
+    }
+
+    .student-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .member-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 28px rgba(9, 32, 63, 0.07);
+      overflow: hidden;
+    }
+
+    .member-photo {
+      height: 230px;
+      background:
+        linear-gradient(135deg, rgba(9, 32, 63, 0.1), rgba(31, 111, 186, 0.08)),
+        #e9eef6;
+      display: grid;
+      place-items: center;
+      color: #91a1b8;
+      font-size: 3rem;
+      font-weight: 900;
+    }
+
+    .member-photo-img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      background: #e9eef6;
+    }
+
+    .member-content {
+      padding: 22px;
+    }
+
+    .member-content p {
+      font-size: 0.95rem;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 28px 0 28px;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: #344057;
+      border-radius: 999px;
+      padding: 9px 15px;
+      font-weight: 850;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .publication-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .publication-card {
+      padding: 24px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 20px;
+    }
+
+    .pub-year {
+      width: 76px;
+      height: 76px;
+      border-radius: 20px;
+      background: var(--light);
+      display: grid;
+      place-items: center;
+      color: var(--blue);
+      font-weight: 900;
+      font-size: 1.05rem;
+    }
+
+    .pub-title {
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .pub-meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pub-links a {
+      color: var(--blue);
+      font-weight: 850;
+      font-size: 0.9rem;
+    }
+
+    .footer {
+      background: var(--navy);
+      color: var(--white);
+      padding: 42px 0;
+    }
+
+    .footer-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer p {
+      color: #bdd3ed;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      color: #dcecff;
+      font-weight: 800;
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 900;
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      border: 0;
+      background: var(--navy);
+      color: var(--white);
+      font-weight: 900;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .intro-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mission-box {
+        position: static;
+      }
+
+      .research-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .menu-btn {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-links {
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        top: 86px;
+        padding: 18px;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: stretch;
+        display: none;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid {
+        padding: 70px 0 50px;
+        gap: 30px;
+      }
+
+      .stats,
+      .research-grid,
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .publication-card {
+        grid-template-columns: 1fr;
+      }
+
+      .pub-year {
+        width: auto;
+        height: auto;
+        padding: 10px 14px;
+        display: inline-flex;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar" aria-label="Site header">
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="Yang Research Group home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Yang Research Group</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#research">Research</a>
+        <a href="#team">Team</a>
+        <a href="#publications">Publications</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-tag">Materials Chemistry · Catalysis · Energy Sustainability</div>
+          <h1>Designing catalytic systems for a sustainable future.</h1>
+          <p class="lead">
+            We develop advanced materials, electrochemical platforms, and electrified chemical processes to transform small molecules, renewable feedstocks, and waste resources into fuels, chemicals, and functional materials.
+          </p>
+          <div class="button-row">
+            <a class="btn primary" href="#research">Explore Research</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Group highlights">
+          <h3>Research at a glance</h3>
+          <div class="stats">
+            <div class="stat"><strong>4</strong><span>Core research directions</span></div>
+            <div class="stat"><strong>10+</strong><span>Collaborative projects</span></div>
+            <div class="stat"><strong>2026</strong><span>Group website launch</span></div>
+            <div class="stat"><strong>Global</strong><span>Collaborative network</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container intro-grid">
+        <aside class="mission-box">
+          <div class="eyebrow">Our mission</div>
+          <p class="quote">
+            We aim to understand and control catalytic reactions across molecules, interfaces, and devices.
+          </p>
+          <p>
+            Our work combines catalyst synthesis, operando characterization, electrochemical analysis, reactor engineering, and data-guided materials design.
+          </p>
+        </aside>
+
+        <div>
+          <div class="eyebrow">About the group</div>
+          <h2>At the energy–environment–materials interface</h2>
+          <p>
+            The Yang Research Group focuses on chemistry and materials science that address urgent challenges in carbon neutrality, clean energy conversion, resource circulation, and sustainable manufacturing. We are particularly interested in non-equilibrium catalytic processes, electrified synthesis, and interfacial reaction mechanisms.
+          </p>
+
+          <div class="mini-list">
+            <div class="mini-item">
+              <div class="mini-icon">1</div>
+              <div>
+                <h3>Mechanism-guided materials design</h3>
+                <p>We connect atomic-scale active sites with macroscopic device performance through spectroscopy, microscopy, and electrochemical diagnostics.</p>
+              </div>
+            </div>
+            <div class="mini-item">
+              <div class="mini-icon">2</div>
+              <div>
+                <h3>Electrified chemical processes</h3>
+                <p>We use electricity, heat, and interfacial fields to drive selective transformations under dynamic and non-equilibrium conditions.</p>
+              </div>
+            </div>
+            <div class="mini-item">
+              <div class="mini-icon">3</div>
+              <div>
+                <h3>Device-level translation</h3>
+                <p>We design catalysts and reactors with an eye toward scalable synthesis, energy efficiency, and real application scenarios.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light" id="research">
+      <div class="container">
+        <div class="eyebrow">Research</div>
+        <h2>Key research areas</h2>
+        <p style="max-width: 760px;">
+          Replace the following cards with your real research directions. The current version is written for a catalysis and materials chemistry group and can be used immediately as a polished first draft.
+        </p>
+
+        <div class="research-grid">
+          <article class="research-card">
+            <div class="research-visual" aria-hidden="true"></div>
+            <div class="research-content">
+              <h3>Electrochemical C–N Coupling</h3>
+              <p>Developing catalysts and electrochemical systems for coupling carbon and nitrogen feedstocks into value-added products such as urea and amides.</p>
+              <div class="tag-list">
+                <span class="tag">CO₂ conversion</span>
+                <span class="tag">Nitrate reduction</span>
+                <span class="tag">Operando study</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="research-card">
+            <div class="research-visual" aria-hidden="true"></div>
+            <div class="research-content">
+              <h3>Electrified Thermal Catalysis</h3>
+              <p>Using Joule heating, pulsed heating, and spatial temperature gradients to enable rapid, selective, and energy-efficient chemical transformations.</p>
+              <div class="tag-list">
+                <span class="tag">Joule heating</span>
+                <span class="tag">Dynamic catalysis</span>
+                <span class="tag">Reactor design</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="research-card">
+            <div class="research-visual" aria-hidden="true"></div>
+            <div class="research-content">
+              <h3>Waste Upcycling</h3>
+              <p>Transforming plastic and organic waste streams into fuels, monomers, lubricants, and functional carbon materials through catalytic processes.</p>
+              <div class="tag-list">
+                <span class="tag">Circular carbon</span>
+                <span class="tag">Polymer upcycling</span>
+                <span class="tag">Sustainability</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="research-card">
+            <div class="research-visual" aria-hidden="true"></div>
+            <div class="research-content">
+              <h3>Single-Atom & Interface Catalysts</h3>
+              <p>Constructing isolated metal sites, dual-atom motifs, and oxide–metal interfaces to control adsorption, charge transfer, and selectivity.</p>
+              <div class="tag-list">
+                <span class="tag">M–N–C</span>
+                <span class="tag">Dual sites</span>
+                <span class="tag">Interface chemistry</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="research-card">
+            <div class="research-visual" aria-hidden="true"></div>
+            <div class="research-content">
+              <h3>Liquid Organic Hydrogen Carriers</h3>
+              <p>Exploring catalytic dehydrogenation and hydrogenation cycles for safe, on-demand hydrogen storage and fuel-cell demonstrations.</p>
+              <div class="tag-list">
+                <span class="tag">H₂ storage</span>
+                <span class="tag">Fuel cells</span>
+                <span class="tag">TEA</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="research-card">
+            <div class="research-visual" aria-hidden="true"></div>
+            <div class="research-content">
+              <h3>In Situ Characterization</h3>
+              <p>Combining spectroscopy, microscopy, electrochemical methods, and kinetic analysis to reveal active phases and reaction pathways.</p>
+              <div class="tag-list">
+                <span class="tag">XPS</span>
+                <span class="tag">EIS</span>
+                <span class="tag">Raman/FTIR</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="team">
+      <div class="container">
+        <div class="eyebrow">People</div>
+        <h2>Lab members</h2>
+        <p style="max-width: 760px;">
+          Our group brings together researchers with backgrounds in catalysis, electrochemistry, materials chemistry, and sustainable chemical engineering.
+        </p>
+
+        <div class="team-sections">
+          <div class="team-section-block">
+            <div class="team-section-title">
+              <h3>Principal Investigator</h3>
+            </div>
+
+            <article class="pi-card">
+              <div class="pi-photo">
+                <!-- 如果图片已经上传到 images 文件夹，请把下一行取消注释，并删除上面的文字占位 J -->
+                <!-- <img class="pi-photo-img" src="images/ji-yang.jpg" alt="Prof. Ji Yang"> -->
+                J
+              </div>
+              <div class="pi-content">
+                <div class="member-role">Principal Investigator</div>
+                <h3>Prof. Ji Yang</h3>
+                <p>
+                  Prof. Ji Yang leads the Yang Research Group. His research focuses on C1 chemistry, functional upcycling and coupled valorization of plastic waste, and AI-driven catalyst design.
+                </p>
+                <p>
+                  The group aims to develop advanced catalytic systems that integrate catalyst synthesis, mechanistic understanding, interfacial regulation, and device-level translation for sustainable chemical manufacturing and energy conversion.
+                </p>
+                <div class="pi-info-list">
+                  <div><strong>Research areas:</strong> C1 chemistry; plastic upcycling; catalyst design; sustainable catalysis.</div>
+                  <div><strong>Email:</strong> your.email@university.edu</div>
+                  <div><strong>Office:</strong> Room XXX, Building XXX, Your University</div>
+                  <div><strong>Links:</strong> Google Scholar / ORCID / ResearchGate</div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="team-section-block">
+            <div class="team-section-title">
+              <h3>Postdoctoral Researcher</h3>
+            </div>
+
+            <div class="student-grid">
+              <article class="member-card">
+                <!-- <img class="member-photo-img" src="images/yinghao-liu.jpg" alt="Dr. Yinghao Liu"> -->
+                <div class="member-photo">L</div>
+                <div class="member-content">
+                  <div class="member-role">Postdoctoral Researcher</div>
+                  <h3>Dr. Yinghao Liu</h3>
+                  <p>Working on advanced catalyst synthesis, operando characterization, and sustainable catalytic transformation.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="team-section-block">
+            <div class="team-section-title">
+              <h3>Ph.D. Students</h3>
+            </div>
+
+            <div class="student-grid">
+              <article class="member-card">
+                <!-- <img class="member-photo-img" src="images/yiming-zhang.jpg" alt="Yiming Zhang"> -->
+                <div class="member-photo">Z</div>
+                <div class="member-content">
+                  <div class="member-role">Ph.D. Student</div>
+                  <h3>Yiming Zhang</h3>
+                  <p>Working on electrochemical C–N coupling and interfacial reaction mechanisms.</p>
+                </div>
+              </article>
+
+              <article class="member-card">
+                <!-- <img class="member-photo-img" src="images/phd-student-2.jpg" alt="Ph.D. Student Name"> -->
+                <div class="member-photo">S</div>
+                <div class="member-content">
+                  <div class="member-role">Ph.D. Student</div>
+                  <h3>Ph.D. Student Name</h3>
+                  <p>Working on catalyst synthesis, structure regulation, and electrochemical performance evaluation.</p>
+                </div>
+              </article>
+
+              <article class="member-card">
+                <!-- <img class="member-photo-img" src="images/phd-student-3.jpg" alt="Ph.D. Student Name"> -->
+                <div class="member-photo">S</div>
+                <div class="member-content">
+                  <div class="member-role">Ph.D. Student</div>
+                  <h3>Ph.D. Student Name</h3>
+                  <p>Working on electrified thermal catalysis, Joule heating, and dynamic reaction control.</p>
+                </div>
+              </article>
+
+              <article class="member-card">
+                <!-- <img class="member-photo-img" src="images/phd-student-4.jpg" alt="Ph.D. Student Name"> -->
+                <div class="member-photo">S</div>
+                <div class="member-content">
+                  <div class="member-role">Ph.D. Student</div>
+                  <h3>Ph.D. Student Name</h3>
+                  <p>Working on plastic waste upcycling, coupled valorization, and catalytic process design.</p>
+                </div>
+              </article>
+
+              <article class="member-card">
+                <!-- <img class="member-photo-img" src="images/phd-student-5.jpg" alt="Ph.D. Student Name"> -->
+                <div class="member-photo">S</div>
+                <div class="member-content">
+                  <div class="member-role">Ph.D. Student</div>
+                  <h3>Ph.D. Student Name</h3>
+                  <p>Working on single-atom catalysts, interface engineering, and reaction mechanism analysis.</p>
+                </div>
+              </article>
+
+              <article class="member-card">
+                <!-- <img class="member-photo-img" src="images/phd-student-6.jpg" alt="Ph.D. Student Name"> -->
+                <div class="member-photo">S</div>
+                <div class="member-content">
+                  <div class="member-role">Ph.D. Student</div>
+                  <h3>Ph.D. Student Name</h3>
+                  <p>Working on AI-assisted catalyst screening, data analysis, and materials discovery.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light" id="publications">
+      <div class="container">
+        <div class="eyebrow">Publications</div>
+        <h2>Selected publications</h2>
+        <p style="max-width: 760px;">
+          Add your real papers here. The filter buttons below are already functional.
+        </p>
+
+        <div class="filters" aria-label="Publication filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="2026">2026</button>
+          <button class="filter-btn" data-filter="2025">2025</button>
+          <button class="filter-btn" data-filter="2024">2024</button>
+        </div>
+
+        <div class="publication-list">
+          <article class="publication-card" data-year="2026">
+            <div class="pub-year">2026</div>
+            <div>
+              <div class="pub-title">Title of your latest research article goes here</div>
+              <div class="pub-meta"><strong>Author A</strong>, Author B, Author C. <em>Journal Name</em>, 2026.</div>
+              <div class="pub-links">
+                <a href="#">DOI</a>
+                <a href="#">PDF</a>
+                <a href="#">Supporting Information</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="publication-card" data-year="2025">
+            <div class="pub-year">2025</div>
+            <div>
+              <div class="pub-title">Electrified catalytic pathways for sustainable chemical synthesis</div>
+              <div class="pub-meta">Author A, <strong>Author B</strong>, Author C. <em>Journal Name</em>, 2025.</div>
+              <div class="pub-links">
+                <a href="#">DOI</a>
+                <a href="#">PDF</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="publication-card" data-year="2024">
+            <div class="pub-year">2024</div>
+            <div>
+              <div class="pub-title">Interface engineering of catalysts for energy conversion</div>
+              <div class="pub-meta">Author A, Author B, <strong>Author C</strong>. <em>Journal Name</em>, 2024.</div>
+              <div class="pub-links">
+                <a href="#">DOI</a>
+                <a href="#">PDF</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Yang Research Group</strong>
+        <p>© <span id="year"></span> Yang Research Group. All rights reserved.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#research">Research</a>
+        <a href="#team">Team</a>
+        <a href="#publications">Publications</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const backToTop = document.getElementById('backToTop');
+    const year = document.getElementById('year');
+
+    year.textContent = new Date().getFullYear();
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      menuBtn.textContent = navLinks.classList.contains('open') ? '×' : '☰';
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuBtn.textContent = '☰';
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const publications = document.querySelectorAll('.publication-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filter = button.dataset.filter;
+        publications.forEach(pub => {
+          const match = filter === 'all' || pub.dataset.year === filter;
+          pub.style.display = match ? 'grid' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
