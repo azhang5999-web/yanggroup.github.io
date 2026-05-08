@@ -1222,7 +1222,7 @@
           const match =
             filter === 'all' ||
             pub.dataset.year === filter ||
-            (filter === 'Others' && pub.database.group === 'Others');
+            (filter === 'Others' && pub.dataset.group === 'Others');
           
           pub.style.display = match ? 'grid' : 'none';
         });
