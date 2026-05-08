@@ -415,6 +415,9 @@
     .research-card {
       overflow: hidden;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .research-card:hover {
@@ -456,10 +459,21 @@
 
     .research-content {
       padding: 24px;
+      display: flex
+      flex-direction: column;
+      flex: 1;
     }
 
-    .research-content p {
-      margin-bottom: 18px;
+    research-content h3{
+      min-height: 76px;
+    }
+    research-content p {
+      min-height: 106px;
+      margin-bottom: 18px
+    }
+    
+    .research-content tag-list {
+      margin-top: auto;
     }
 
     .tag-list {
