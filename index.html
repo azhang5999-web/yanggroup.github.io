@@ -658,8 +658,31 @@
       display: grid;
       grid-template-columns: auto 1fr;
       gap: 20px;
+      align-items: start;
     }
 
+    .pub-info {
+      width: 100%;
+    }
+
+    .pub-toc {
+      margin-top: 18px;
+      width: 100%;
+      max-width: 760px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #f6f8fb;
+      border: 1px solid var(--line);
+    }
+
+    .pub-toc img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      object-position: center;
+    }
+      
     .pub-year {
       width: 76px;
       height: 76px;
@@ -1114,12 +1137,16 @@
         <div class="publication-list">
           <article class="publication-card" data-year="2026">
             <div class="pub-year">2026</div>
-            <div>
+            
+            <div class="pub-info">
               <div class="pub-title">Membrane Reactors for Ammonia Production: Insights into Ammonia-Separative Membranes, Synthesis Catalysts, and Their Integration</div>
               <div class="pub-meta">Genevieve Yarema*, <strong>Ji Yang*</strong>, Akash Warty, Zixiao Liu, Liangbin Hu & Dongxia Liu. <em>ACS Nano</em>, 2026.</div>
               <div class="pub-links">
                 <a href="https://doi.org/10.1021/acsnano.5c12610" target="_blank" rel="noopener">DOI</a>
               </div>
+
+              <div class="pub-toc">
+                <img src="paperpictures/26acsn.jpg" alt="TOC for Membrane Reactors for Ammonia Production: Insights into Ammonia-Separative Membranes, Synthesis Catalysts, and Their Integration"></div>
             </div>
           </article>
 
