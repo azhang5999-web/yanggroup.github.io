@@ -250,25 +250,47 @@
       overflow: hidden;
       color: var(--white);
       background:
-        linear-gradient(115deg, rgba(9, 32, 63, 0.97) 0%, rgba(9, 32, 63, 0.87) 48%, rgba(31, 111, 186, 0.65) 100%),
+      linear-gradient(115deg, rgba(9, 32, 63, 0.97) 0%, rgba(9, 32, 63, 0.87) 48%, rgba(31, 111, 186, 0.65) 100%),
         url("https://images.unsplash.com/photo-1581093458791-9d42cc51ee68?auto=format&fit=crop&w=1800&q=80") center/cover;
     }
 
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(360px, 1.05fr) minmax(360px, 0.95fr) minmax(280px, 0.72fr);
+      gap: 34px;
+      align-items: center;
+      padding: 80px 0;
+    }
+
+    .hero-copy {
+      min-height: 620px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-copy-top {
+      padding-top: 10px;
+    }
+
+    .hero-copy-bottom {
+      padding-bottom: 70px;
+    }
+
     .hero-carousel {
-      position: absolute;
-      left: 50%;
-      top: 52%;
-      transform: translate(-50%, -50%);
-      width: min(680px, 42vw);
-      height: 380px;
+      width: 100%;
+      height: 320px;
       border-radius: 28px;
       overflow: hidden;
+      position: relative;
       z-index: 1;
       box-shadow: 0 28px 70px rgba(0, 0, 0, 0.22);
       border: 1px solid rgba(255, 255, 255, 0.22);
       background: rgba(255, 255, 255, 0.08);
     }
-    
+
     .hero-carousel-track {
       width: 100%;
       height: 100%;
@@ -303,7 +325,7 @@
       width: 11px;
       height: 11px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.95);
       background: rgba(255, 255, 255, 0.45);
       cursor: pointer;
       padding: 0;
@@ -348,22 +370,6 @@
       gap: 56px;
       align-items: center;
       padding: 80px 0;
-    }
-
-    .hero-copy {
-      min-height: 620px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .hero-copy-top {
-      padding-top: 20px;
-    }
-
-    .hero-copy-bottom {
-      max-width: 760px;
-      padding-bottom: 50px;
     }
 
     .hero h1 {
@@ -961,28 +967,11 @@
 
   <main>
     <section class="hero" id="home">
-      <div class="hero-carousel" aria-label="Homepage image carousel">
-        <div class="hero-carousel-track">
-          <img class="hero-carousel-slide active" src="rollingpictures/c1chemistry.jpg" alt="Yang Research Group highlight 1">
-          <img class="hero-carousel-slide" src="rollingpictures/plastic.jpg" alt="Yang Research Group highlight 2">
-          <img class="hero-carousel-slide" src="rollingpictures/ai.jpg" alt="Yang Research Group highlight 3">
-          <img class="hero-carousel-slide" src="rollingpictures/2551camping.jpg" alt="Yang Research Group highlight 4">
-          <img class="hero-carousel-slide" src="rollingpictures/groupmemberpicture.jpg" alt="Yang Research Group highlight 5">
-        </div>
-
-        <div class="hero-carousel-dots" aria-label="Carousel navigation">
-          <button class="hero-dot active" data-slide="0" aria-label="Show slide 1"></button>
-          <button class="hero-dot" data-slide="1" aria-label="Show slide 2"></button>
-          <button class="hero-dot" data-slide="2" aria-label="Show slide 3"></button>
-          <button class="hero-dot" data-slide="3" aria-label="Show slide 4"></button>
-          <button class="hero-dot" data-slide="4" aria-label="Show slide 5"></button>
-        </div>
-      </div>
-
       <div class="container hero-grid">
+
         <div class="hero-copy">
           <div class="hero-copy-top">
-            <div class="hero-tag">C1 Chemistry · Waste Upclycling · AI-Driven Design</div>
+            <div class="hero-tag">C1 Chemistry · Waste Upcycling · AI-Driven Design</div>
             <h1>Designing catalytic systems for a sustainable future.</h1>
           </div>
 
@@ -995,6 +984,31 @@
             </div>
           </div>
         </div>
+
+        <div class="hero-carousel" aria-label="Homepage image carousel">
+          <div class="hero-carousel-track">
+            <img class="hero-carousel-slide active" src="rollingpictures/c1chemistry.jpg" alt="Yang Research Group highlight 1">
+            <img class="hero-carousel-slide" src="rollingpictures/plastic.jpg" alt="Yang Research Group highlight 2">
+            <img class="hero-carousel-slide" src="rollingpictures/ai.jpg" alt="Yang Research Group highlight 3">
+            <img class="hero-carousel-slide" src="rollingpictures/2551camping.jpg" alt="Yang Research Group highlight 4">
+            <img class="hero-carousel-slide" src="rollingpictures/groupmemberpicture.jpg" alt="Yang Research Group highlight 5">
+          </div>
+
+          <div class="hero-carousel-dots" aria-label="Carousel navigation">
+            <button class="hero-dot active" data-slide="0" aria-label="Show slide 1"></button>
+            <button class="hero-dot" data-slide="1" aria-label="Show slide 2"></button>
+            <button class="hero-dot" data-slide="2" aria-label="Show slide 3"></button>
+            <button class="hero-dot" data-slide="3" aria-label="Show slide 4"></button>
+            <button class="hero-dot" data-slide="4" aria-label="Show slide 5"></button>
+          </div>
+        </div>
+
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="hero-copy-top">
+              <div class="hero-tag">C1 Chemistry · Waste Upclycling · AI-Driven Design</div>
+              <h1>Designing catalytic systems for a sustainable future.</h1>
+            </div>
 
         <aside class="hero-card" aria-label="Group highlights">
           <h3>Research at a glance</h3>
@@ -1524,45 +1538,6 @@
   </footer>
 
   <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
-
-  const heroSlides = document.querySelectorAll('.hero-carousel-slide');
-  const heroDots = document.querySelectorAll('.hero-dot');
-  let currentHeroSlide = 0;
-  let heroSlideTimer;
-
-  function showHeroSlide(index) {
-    heroSlides.forEach(slide => slide.classList.remove('active'));
-    heroDots.forEach(dot => dot.classList.remove('active'));
-
-    heroSlides[index].classList.add('active');
-    heroDots[index].classList.add('active');
-
-    currentHeroSlide = index;
-  }
-
-  function nextHeroSlide() {
-    const nextIndex = (currentHeroSlide + 1) % heroSlides.length;
-    showHeroSlide(nextIndex);
-  }
-
-  function startHeroCarousel() {
-    heroSlideTimer = setInterval(nextHeroSlide, 3000);
-  }
-
-  function resetHeroCarousel() {
-    clearInterval(heroSlideTimer);
-    startHeroCarousel();
-  }
-
-  heroDots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      const index = Number(dot.dataset.slide);
-      showHeroSlide(index);
-      resetHeroCarousel();
-    });
-  });
-
-  startHeroCarousel(); 
   
   <script>
     const menuBtn = document.getElementById('menuBtn');
@@ -1616,6 +1591,52 @@
         });
       });
     });
+    
+    const heroSlides = document.querySelectorAll('.hero-carousel-slide');
+    const heroDots = document.querySelectorAll('.hero-dot');
+
+    let currentHeroSlide = 0;
+    let heroSlideTimer;
+
+    function showHeroSlide(index) {
+      if (!heroSlides.length || !heroDots.length) return;
+
+      heroSlides.forEach(slide => slide.classList.remove('active'));
+      heroDots.forEach(dot => dot.classList.remove('active'));
+
+      heroSlides[index].classList.add('active');
+      heroDots[index].classList.add('active');
+
+      currentHeroSlide = index;
+    }
+
+    function nextHeroSlide() {
+      if (!heroSlides.length) return;
+
+      const nextIndex = (currentHeroSlide + 1) % heroSlides.length;
+      showHeroSlide(nextIndex);
+    }
+
+    function startHeroCarousel() {
+      if (!heroSlides.length || !heroDots.length) return;
+
+      heroSlideTimer = setInterval(nextHeroSlide, 3000);
+    }
+
+    function resetHeroCarousel() {
+      clearInterval(heroSlideTimer);
+      startHeroCarousel();
+    }
+
+    heroDots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const index = Number(dot.dataset.slide);
+        showHeroSlide(index);
+        resetHeroCarousel();
+      });
+    });
+
+    startHeroCarousel();
   </script>
 </body>
 </html>
