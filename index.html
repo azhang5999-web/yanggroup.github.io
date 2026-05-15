@@ -254,41 +254,36 @@
         url("https://images.unsplash.com/photo-1581093458791-9d42cc51ee68?auto=format&fit=crop&w=1800&q=80") center/cover;
     }
 
-    .hero-grid {
+    .hero .container {
+      width: min(1380px, calc(100% - 80px));
+    }
+
+    .hero-layout {
       position: relative;
       z-index: 2;
+      min-height: calc(92vh - 76px);
       display: grid;
-      grid-template-columns: minmax(430px, 1fr) minmax(520px, 1.05fr) minmax(310px, 0.75fr);
-      gap: 44px;
-      align-items: center;
-      padding: 90px 0;
+      grid-template-rows: auto auto auto 1fr;
+      padding: 54px 0 58px;
     }
 
-    .hero-copy {
-      min-height: 620px;
+    .hero-top {
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .hero-copy-top {
-      padding-top: 20px;
-    }
-
-    .hero-copy-bottom {
-      padding-bottom: 70px;
+      justify-content: flex-start;
+      margin-bottom: 28px;
     }
 
     .hero-carousel {
-      width: 100%;
-      height: 420px;
+      width: min(860px, 70vw);
+      height: 360px;
+      margin: 0 auto 30px auto;
       border-radius: 28px;
       overflow: hidden;
       position: relative;
       z-index: 1;
       box-shadow: 0 28px 70px rgba(0, 0, 0, 0.22);
       border: 1px solid rgba(255, 255, 255, 0.22);
-      background: rgba(255, 255, 255, 0.08);
+      background: #ffffff;
     }
 
     .hero-carousel-track {
@@ -302,15 +297,16 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       object-position: center;
       opacity: 0;
       transition: opacity 0.7s ease;
+      background: #ffffff;
     }
 
     .hero-carousel-slide.active {
       opacity: 1;
-    }
+     }
 
     .hero-carousel-dots {
       position: absolute;
@@ -336,6 +332,39 @@
       background: #ffffff;
       transform: scale(1.25);
     }
+
+    .hero-title-under {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 36px auto;
+    }
+
+    .hero-title-under h1 {
+      color: var(--white);
+      font-size: clamp(2.2rem, 4.2vw, 4.2rem);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+    }
+
+    .hero-bottom-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 430px;
+      gap: 48px;
+      align-items: end;
+      margin-top: auto;
+    }
+
+    .hero-lead-box {
+      max-width: 760px;
+    }
+
+    .hero-lead-box .lead {
+      margin-top: 0;
+    }
+
+    .hero-lead-box .button-row {
+      margin-top: 24px;
+    }
     
     .hero::before,
     .hero::after {
@@ -360,20 +389,6 @@
       background: radial-gradient(circle, rgba(243, 179, 61, 0.32), transparent 65%);
       left: -120px;
       bottom: 20px;
-    }
-
-    .hero-grid {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
-      gap: 56px;
-      align-items: center;
-      padding: 80px 0;
-    }
-
-    .hero h1 {
-      color: var(--white);
     }
 
     .hero-tag {
@@ -967,30 +982,18 @@
 
   <main>
     <section class="hero" id="home">
-      <div class="container hero-grid">
+      <div class="container hero-layout">
 
-        <div class="hero-copy">
-          <div class="hero-copy-top">
-            <div class="hero-tag">C1 Chemistry · Waste Upcycling · AI-Driven Design</div>
-            <h1>Designing catalytic systems for a sustainable future.</h1>
-          </div>
-
-          <div class="hero-copy-bottom">
-            <p class="lead">
-              We develop advanced materials, chemical platforms, and electrified chemical processes to transform small molecules, renewable feedstocks, and waste resources into fuels, chemicals, and functional materials.
-            </p>
-            <div class="button-row">
-              <a class="btn primary" href="#research">Explore Research</a>
-            </div>
-          </div>
+        <div class="hero-top">
+          <div class="hero-tag">C1 Chemistry · Waste Upcycling · AI-Driven Design</div>
         </div>
 
         <div class="hero-carousel" aria-label="Homepage image carousel">
           <div class="hero-carousel-track">
-            <img class="hero-carousel-slide active" src="rollingpictures/c1chemistry.jpg" alt="Yang Research Group highlight 1">
+            <img class="hero-carousel-slide active" src="rollingpictures/chemistry.jpg" alt="Yang Research Group highlight 1">
             <img class="hero-carousel-slide" src="rollingpictures/plastic.jpg" alt="Yang Research Group highlight 2">
             <img class="hero-carousel-slide" src="rollingpictures/ai.jpg" alt="Yang Research Group highlight 3">
-            <img class="hero-carousel-slide" src="rollingpictures/2551camping.jpg" alt="Yang Research Group highlight 4">
+            <img class="hero-carousel-slide" src="rollingpictures/25acsnanograph.jpg" alt="Yang Research Group highlight 4">
             <img class="hero-carousel-slide" src="rollingpictures/groupmemberpicture.jpg" alt="Yang Research Group highlight 5">
           </div>
 
@@ -1003,16 +1006,31 @@
           </div>
         </div>
 
-        <aside class="hero-card" aria-label="Group highlights">
-          <h3>Research at a glance</h3>
-          <div class="stats">
-            <div class="stat"><strong>3</strong><span>Core research directions</span></div>
-            <div class="stat"><strong>5+</strong><span>Collaborative projects</span></div>
-            <div class="stat"><strong>2025</strong><span>Group website launch</span></div>
-            <div class="stat"><strong>Global</strong><span>Collaborative network</span></div>
+        <div class="hero-title-under">
+          <h1>Designing catalytic systems for a sustainable future.</h1>
+        </div>
+
+        <div class="hero-bottom-row">
+          <div class="hero-lead-box">
+            <p class="lead">
+              We develop advanced materials, chemical platforms, and electrified chemical processes to transform small molecules, renewable feedstocks, and waste resources into fuels, chemicals, and functional materials.
+            </p>
+            <div class="button-row">
+              <a class="btn primary" href="#research">Explore Research</a>
+            </div>
           </div>
-        </aside>
-            
+
+          <aside class="hero-card" aria-label="Group highlights">
+            <h3>Research at a glance</h3>
+            <div class="stats">
+              <div class="stat"><strong>3</strong><span>Core research directions</span></div>
+              <div class="stat"><strong>5+</strong><span>Collaborative projects</span></div>
+              <div class="stat"><strong>2025</strong><span>Group website launch</span></div>
+              <div class="stat"><strong>Global</strong><span>Collaborative network</span></div>
+            </div>
+          </aside>
+        </div>
+
       </div>
     </section>
 
