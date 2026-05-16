@@ -271,12 +271,13 @@
       display: flex;
       justify-content: flex-start;
       margin-bottom: 28px;
+      padding-left: 180px;
     }
 
     .hero-carousel {
-      width: min(860px, 70vw);
-      height: 410px;
-      margin: 0 auto 30px auto;
+      width: min(980px, 78vw);
+      height: 500px;
+      margin: 0 auto 34px auto;
       border-radius: 28px;
       overflow: hidden;
       position: relative;
@@ -349,29 +350,28 @@
     }
 
     .hero-bottom-row {
-      display: grid;
-      grid-template-columns: 430px 430px;
-      gap: 56px;
+      display: flex;
       justify-content: center;
-      align-items: stretch;
+      align-items: center;
       margin-top: auto;
     }
 
     .hero-lead-box {
-      width: 430px;
-      min-height: 245px;
+      width: min(720px, 80vw);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      align-items: center;
+      text-align: center;
     }
 
     .hero-lead-box .lead {
       margin: 0;
-      max-width: 430px;
+      max-width: 720px;
     }
 
     .hero-lead-box .button-row {
-      margin-top: auto;
+      margin-top: 26px;
+      justify-content: center;
     }
     
     .hero::before,
@@ -1000,10 +1000,10 @@
 
         <div class="hero-carousel" aria-label="Homepage image carousel">
           <div class="hero-carousel-track">
-            <img class="hero-carousel-slide active" src="rollingpictures/chemistry.jpg" alt="Yang Research Group highlight 1">
+            <img class="hero-carousel-slide active" src="rollingpictures/c1chemistry.jpg" alt="Yang Research Group highlight 1">
             <img class="hero-carousel-slide" src="rollingpictures/plastic.jpg" alt="Yang Research Group highlight 2">
             <img class="hero-carousel-slide" src="rollingpictures/ai.jpg" alt="Yang Research Group highlight 3">
-            <img class="hero-carousel-slide" src="rollingpictures/25acsnanograph.jpg" alt="Yang Research Group highlight 4">
+            <img class="hero-carousel-slide" src="rollingpictures/2551camping.jpg" alt="Yang Research Group highlight 4">
             <img class="hero-carousel-slide" src="rollingpictures/groupmemberpicture.jpg" alt="Yang Research Group highlight 5">
           </div>
 
@@ -1029,18 +1029,7 @@
               <a class="btn primary" href="#research">Explore Research</a>
             </div>
           </div>
-
-          <aside class="hero-card" aria-label="Group highlights">
-            <h3>Research at a glance</h3>
-            <div class="stats">
-              <div class="stat"><strong>3</strong><span>Core research directions</span></div>
-              <div class="stat"><strong>5+</strong><span>Collaborative projects</span></div>
-              <div class="stat"><strong>2025</strong><span>Group website launch</span></div>
-              <div class="stat"><strong>Global</strong><span>Collaborative network</span></div>
-            </div>
-          </aside>
         </div>
-
       </div>
     </section>
 
