@@ -287,10 +287,10 @@
     }
 
     .hero-top {
+      width: min(980px, 78px);
       display: flex;
       justify-content: flex-start;
       margin-bottom: 28px;
-      padding-left: 180px;
     }
 
     .hero-carousel {
@@ -919,6 +919,9 @@
     }
 
     @media (max-width: 980px) {
+      .hero-top {
+        width: 100%;
+      }
       .hero-grid,
       .intro-grid {
         grid-template-columns: 1fr;
