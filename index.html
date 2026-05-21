@@ -22,6 +22,7 @@
       --shadow: 0 18px 45px rgba(9, 32, 63, 0.13);
       --radius: 22px;
       --max: 1180px;
+      --hero-media-width: min(980px, 78vw);
     }
 
     * {
@@ -294,7 +295,7 @@
     }
 
     .hero-carousel {
-      width: min(980px, 78vw);
+      width: var(--hero-media-width);
       height: 590px;
       margin: 0 auto 12px auto;
       border-radius: 28px;
@@ -429,7 +430,10 @@
       color: #eaf6ff;
       font-weight: 800;
       backdrop-filter: blur(10px);
-      margin-bottom: 24px;
+      margin-bottom: 0;
+      white-space: nowrap;
+      width: auto;
+      max-width: none;
     }
 
     .hero-card {
@@ -922,6 +926,11 @@
       .hero-top {
         width: 100%;
       }
+
+      .hero-tag {
+        white-space: normal;
+      }
+      
       .hero-grid,
       .intro-grid {
         grid-template-columns: 1fr;
